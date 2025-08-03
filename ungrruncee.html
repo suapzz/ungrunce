@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Jumpscare</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #scare-img {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+    }
+    #scare-audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<button id="start-btn">Klik sini untuk mula</button>
+
+<img id="scare-img" src="https://i.imgur.com/3p8M8zT.jpg" alt="Jumpscare">
+
+<audio id="scare-audio" src="https://www.myinstants.com/media/sounds/jumpscare.mp3"></audio>
+
+<script>
+  const btn = document.getElementById('start-btn');
+  const img = document.getElementById('scare-img');
+  const audio = document.getElementById('scare-audio');
+
+  btn.addEventListener('click', () => {
+    btn.style.display = 'none';
+    // Delay for suspense
+    setTimeout(() => {
+      img.style.display = 'block';
+      audio.play();
+    }, 3000); // 3 seconds delay
+  });
+</script>
+
+</body>
+</html>
